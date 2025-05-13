@@ -1,0 +1,20 @@
+0th instruction: 32'b0000000_00001_00000_000_00001_0010011;  addi x1, x0, 1   (Initialize x1 = 1)
+1st instruction: 32'b0000000_00001_00000_010_00001_0100011;  sd x1, 0(x0)     (Store Fib(1) = 1)
+2nd instruction: 32'b0000000_00001_00000_000_00010_0010011;  addi x2, x0, 1   (Initialize x2 = 1)
+3rd instruction: 32'b0000000_00010_00000_010_00010_0100011;  sd x2, 8(x0)     (Store Fib(2) = 1)
+4th instruction: 32'b0000000_00010_00000_000_00011_0010011;  addi x3, x0, 2   (Counter x3 = 2)
+5th instruction: 32'b0000000_00110_00000_000_01000_0010011;  addi x8, x0, 6   (Loop limit N=6)
+
+6th instruction: 32'b0000000_00001_00010_000_00100_0110011;  add x4, x1, x2   (Fib(n) = x1 + x2)
+7th instruction: 32'b0000000_00100_00000_010_00100_0100011;  sd x4, 16(x0)    (Store Fib(n))
+8th instruction: 32'b0000000_00010_00000_000_00001_0110011;  add x1, x2, x0   (x1 = x2)
+9th instruction: 32'b0000000_00100_00000_000_00010_0110011;  add x2, x4, x0   (x2 = x4)
+
+10th instruction: 32'b0000000_00001_00011_000_10100_0010011;  addi x20, x3, 1   (Increment counter)
+11th instruction: 32'b0000000_00000_10100_000_00011_0010011;  addi x3, x20, 0   (Update counter)
+12th instruction: 32'b0000000_00011_01000_000_00110_1100011;  beq x3, x8, exit  (Exit if x3 == N)
+13th instruction: 32'b1111111_00000_00000_000_10001_1100011;  beq x0, x0, -32   (Jump back to loop)
+
+14th instruction: 32'b0000000_00000_00000_000_00000_0000000;  nop
+15th instruction: 32'b0000000_00001_00000_000_01111_0010011;  addi x15, x0, 1   (Final instruction)
+

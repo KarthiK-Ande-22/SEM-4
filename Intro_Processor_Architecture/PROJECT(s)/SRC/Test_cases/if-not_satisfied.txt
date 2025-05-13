@@ -1,0 +1,5 @@
+0th instruction: 32'b0000000_10000_00000_000_00001_0010011;  addi x1, x0, 16   (Initialize x1 = 1)
+1st instruction: 32'b0000000_10001_00000_000_00010_0010011;  addi x2, x0, 17  (Initialize x1 = 1)
+2nd instruction: 32'b0000000_00001_00010_000_00100_1100011;  beq x1, x2, loop (branching example)
+3rd instruction: 32'b0100000_01001_01101_000_01000_0110011;  sub x8, x13, x9
+4th instruction: 32'b0000000_01001_01101_000_01000_0110011;  add x8, x13, x9

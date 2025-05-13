@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Feb  9 17:41:06 2025
+[*]
+[dumpfile] "/home/karthik_ande_22/Desktop/my_ipa_till/wrapper_tb.vcd"
+[dumpfile_mtime] "Sun Feb  9 17:39:01 2025"
+[dumpfile_size] 72222567
+[savefile] "/home/karthik_ande_22/Desktop/my_ipa_till/GTK_WAVE.gtkw"
+[timestart] 0
+[size] 3072 1462
+[pos] -77 -77
+*-12.068650 50000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 360
+[signals_width] 334
+[sst_expanded] 1
+[sst_vpaned_height] 420
+@22
+tb_wrapper.op[3:0]
+@420
+tb_wrapper.signed_a[63:0]
+tb_wrapper.signed_b[63:0]
+tb_wrapper.signed_result[63:0]
+[pattern_trace] 1
+[pattern_trace] 0

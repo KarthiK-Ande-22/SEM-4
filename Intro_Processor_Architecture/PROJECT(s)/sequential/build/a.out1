@@ -1,0 +1,20 @@
+**** module/scope: tb_pc
+     Flip-Flops   : 0
+     Logic Gates  : 0
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
+**** module/scope: tb_pc.uut
+     Flip-Flops   : 32
+     Logic Gates  : 1
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
+**** module/scope: tb_pc.uut.m1
+     Flip-Flops   : 0
+     Logic Gates  : 64
+     MUX[2]: 32 slices
+**** TOTALS
+     Flip-Flops   : 32
+     Logic Gates  : 65
+     MUX[2]: 32 slices
+     LOG[13]: 2 unaccounted
+     LOG[14]: 2 unaccounted

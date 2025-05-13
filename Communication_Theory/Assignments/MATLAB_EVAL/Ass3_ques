@@ -1,0 +1,54 @@
+clc; clear; close all;
+
+% Parameters
+fs = 50000;
+fc = 1000; 
+t = 0:1/fs:0.1;x`x  
+fm = 10; 
+theta = 5 * sin(2 * pi * fm * t);  
+
+
+% Frequency Modulation
+u = cos(2 * pi * fc * t + theta);  
+m = (1 / (2 * pi)) * gradient(theta, 1/fs);  
+
+figure;
+subplot(2,1,1);
+plot(t, m, 'LineWidth', 1.5);
+title("Message Signal");
+
+subplot(2,1,2);
+plot(t, u, 'LineWidth', 1.5);
+title("FM Signal");
+
+
+N = length(u);     
+U = fft(u);        
+f = (-N/2:N/2-1) * (fs / N);  
+
+figure;
+plot(f, abs(fftshift(U)), 'b', 'LineWidth', 1.5);
+xlabel('Frequency (Hz)'); ylabel('Magnitude');
+title('Spectrum of FM Signal');
+grid on; 
+xlim([-1500 1500]);
+
+% FM Demodulation
+temp = gradient(u, 1/fs);
+[peaks, locs] = findpeaks(abs(temp), t);
+envelope_interp = interp1(locs, peaks, t, "linear", "extrap");  
+envelope_interp = (envelope_interp - mean(envelope_interp)) / (2 * pi);  
+
+% Plot demodulated signal
+figure;
+subplot(2,1,1);
+plot(t, envelope_interp, 'r', 'LineWidth', 2);
+xlabel('Time (s)'); ylabel('Amplitude');
+title("Demodulated Signal");
+
+subplot(2,1,2);
+plot(t, m, 'b', 'LineWidth', 1.5);
+xlabel('Time (s)'); ylabel('Amplitude');
+title("Original Message Signal");
+
+grid on;
